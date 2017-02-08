@@ -531,9 +531,7 @@
           options = {};
         }
         this._ensureElement();
-        Backbone.$('body').css({
-          overflow: 'hidden'
-        });
+
         if (this.modals.length > 0) {
           lastModal = _.last(this.modals);
           lastModal.modalEl.addClass("" + lastModal.prefix + "-view--stacked");
@@ -595,11 +593,6 @@
           if (this.zIndex !== 0) {
             lastModal.delegateModalEvents();
           }
-        }
-        if (this.zIndex === 0) {
-          Backbone.$('body').css({
-            overflow: 'visible'
-          });
         }
         return this.triggerMethod('modal:destroy', view);
       };
